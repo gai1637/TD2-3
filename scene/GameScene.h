@@ -12,6 +12,14 @@
 /// <summary>
 /// ゲームシーン
 /// </summary>
+enum class Scene {
+	//タイトル
+	title,
+	//ゲームプレイ
+	game,
+};
+class Title;
+class Game;
 class GameScene {
 
 public: // メンバ関数
@@ -39,11 +47,31 @@ public: // メンバ関数
 	/// 描画
 	/// </summary>
 	void Draw();
+	
+	/// <summary>
+	/// タイトル
+	/// </summary>
+	void TitleMove();
+	
+	/// <summary>
+	/// ゲーム
+	/// </summary>
+	void GameMove();
+
+
+
 
 private: // メンバ変数
 	DirectXCommon* dxCommon_ = nullptr;
 	Input* input_ = nullptr;
 	Audio* audio_ = nullptr;
+
+	static void (GameScene::*pFuncTable[])();
+	Scene scene = Scene::title;
+	std::unique_ptr<Game> game;
+	std::unique_ptr<Title> title;
+
+
 
 	/// <summary>
 	/// ゲームシーン用
