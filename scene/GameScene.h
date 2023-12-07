@@ -15,11 +15,14 @@
 enum class Scene {
 	//タイトル
 	title,
+	//セレクト
+	select,
 	//ゲームプレイ
 	game,
 };
 class Title;
 class Game;
+class Select;
 class GameScene {
 
 public: // メンバ関数
@@ -52,6 +55,13 @@ public: // メンバ関数
 	/// タイトル
 	/// </summary>
 	void TitleMove();
+
+	/// <summary>
+	/// セレクト
+	/// </summary>
+	void SelectMove();
+
+
 	
 	/// <summary>
 	/// ゲーム
@@ -70,6 +80,7 @@ private: // メンバ変数
 	Scene scene = Scene::title;
 	std::unique_ptr<Game> game;
 	std::unique_ptr<Title> title;
+	std::unique_ptr<Select> select;
 
 
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -112,6 +112,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scene\GameScene.cpp" />
+    <ClCompile Include="Select.cpp" />
     <ClCompile Include="TimedCall.cpp" />
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
@@ -146,6 +147,7 @@
     <ClInclude Include="math\Vector3.h" />
     <ClInclude Include="math\Vector4.h" />
     <ClInclude Include="scene\GameScene.h" />
+    <ClInclude Include="Select.h" />
     <ClInclude Include="TimedCall.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>

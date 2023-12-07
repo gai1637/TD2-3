@@ -3,6 +3,7 @@
 #include <cassert>
 #include"Title.h"
 #include"Game.h"
+#include"Select.h"
 
 GameScene::GameScene() {}
 
@@ -10,6 +11,7 @@ GameScene::~GameScene() {}
 
 void (GameScene::*GameScene::pFuncTable[])() = {
 	&GameScene::TitleMove,
+	&GameScene::SelectMove,
 	&GameScene::GameMove
 
 };
@@ -24,6 +26,11 @@ void GameScene::Initialize() {
 
 	title = std::make_unique<Title>();
 	title->Initialize();
+
+	select = std::make_unique<Select>();
+	select->Initialize();
+
+
 }
 //ここには触るな、触りたいなら言ってくれ
 void GameScene::Update() { 
@@ -38,6 +45,8 @@ void GameScene::TitleMove() {
 void GameScene::GameMove() { 
 	game->Update(); 
 }
+
+void GameScene::SelectMove() { select->Update(); }
 
 void GameScene::Draw() {
 
@@ -56,6 +65,9 @@ void GameScene::Draw() {
 	}
 	if (scene == Scene::game) {
 		game->Draw2D();
+	}
+	if (scene == Scene::select) {
+		select->Draw2D();
 	}
 
 	// スプライト描画後処理
@@ -77,6 +89,9 @@ void GameScene::Draw() {
 	if (scene == Scene::game) {
 		game->Draw3D();
 	}
+	if (scene == Scene::select) {
+		select->Draw3D();
+	}
 
 	// 3Dオブジェクト描画後処理
 	Model::PostDraw();
@@ -94,6 +109,9 @@ void GameScene::Draw() {
 	}
 	if (scene == Scene::game) {
 		game->Draw2DNear();
+	}
+	if (scene == Scene::select) {
+		select->Draw2DNear();
 	}
 
 	// スプライト描画後処理
