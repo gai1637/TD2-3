@@ -7,15 +7,14 @@
 #include "Sprite.h"
 #include "ViewProjection.h"
 #include "WorldTransform.h"
-class Skydome;
-class Game {
+class Skydome {
 private:
-	std::unique_ptr<Skydome> skydome_;
-
+	WorldTransform worldTransform_;
+	Model* model_ = nullptr;
 
 
 public:
-	~Game();
+	
 	/// <summary>
 	/// 初期化
 	/// </summary>
@@ -31,14 +30,7 @@ public:
 	/// </summary>
 	void Draw3D();
 
-	/// <summary>
-	/// 2D前景描画
-	/// </summary>
-	void Draw2DNear();
 
-	/// <summary>
-	/// 2D背景描画
-	/// </summary>
-	void Draw2D();
+
 
 };

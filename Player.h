@@ -7,15 +7,20 @@
 #include "Sprite.h"
 #include "ViewProjection.h"
 #include "WorldTransform.h"
-class Skydome;
-class Game {
+class Player {
 private:
-	std::unique_ptr<Skydome> skydome_;
+	WorldTransform worldTransform_;
+	Model* modelHead_;
+	Model* modelBody_;
+	Model* modelRArm_;
+	Model* modelLArm_;
+	Model* modelRFoot_;
+	Model* modelLFoot_;
 
 
 
 public:
-	~Game();
+	~Player();
 	/// <summary>
 	/// 初期化
 	/// </summary>
@@ -31,14 +36,6 @@ public:
 	/// </summary>
 	void Draw3D();
 
-	/// <summary>
-	/// 2D前景描画
-	/// </summary>
-	void Draw2DNear();
 
-	/// <summary>
-	/// 2D背景描画
-	/// </summary>
-	void Draw2D();
 
 };
