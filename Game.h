@@ -7,15 +7,17 @@
 #include "Sprite.h"
 #include "ViewProjection.h"
 #include "WorldTransform.h"
-class Skydome;
+#include<memory>
+#include"Skydome.h"
+//class Skydome;
 class Game {
 private:
 	std::unique_ptr<Skydome> skydome_;
-
-
+	Input* input_ = nullptr;
+	ViewProjection viewProjection_;
 
 public:
-	~Game();
+	
 	/// <summary>
 	/// 初期化
 	/// </summary>

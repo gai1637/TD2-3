@@ -24,11 +24,11 @@ void GameScene::Initialize() {
 	game = std::make_unique<Game>();
 	game->Initialize();
 
-	title = std::make_unique<Title>();
+	/*title = std::make_unique<Title>();
 	title->Initialize();
 
 	select = std::make_unique<Select>();
-	select->Initialize();
+	select->Initialize();*/
 
 
 }
@@ -39,14 +39,14 @@ void GameScene::Update() {
 }
 //あまり触るな
 void GameScene::TitleMove() { 
-	title->Update();
+	/*title->Update();*/
 }
 //ここも
 void GameScene::GameMove() { 
 	game->Update(); 
 }
 
-void GameScene::SelectMove() { select->Update(); }
+void GameScene::SelectMove() { /*select->Update(); */}
 
 void GameScene::Draw() {
 
@@ -60,15 +60,15 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに背景スプライトの描画処理を追加できる
 	/// </summary>
-	if (scene == Scene::title) {
+	/*if (scene == Scene::title) {
 		title->Draw2D();
-	}
-	if (scene == Scene::game) {
+	}*/
+	/*if (scene == Scene::game) {
 		game->Draw2D();
-	}
-	if (scene == Scene::select) {
+	}*/
+	/*if (scene == Scene::select) {
 		select->Draw2D();
-	}
+	}*/
 
 	// スプライト描画後処理
 	Sprite::PostDraw();
@@ -83,15 +83,15 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに3Dオブジェクトの描画処理を追加できる
 	/// </summary>
-	if (scene == Scene::title) {
+	/*if (scene == Scene::title) {
 		title->Draw3D();
-	}
+	}*/
 	if (scene == Scene::game) {
 		game->Draw3D();
 	}
-	if (scene == Scene::select) {
+	/*if (scene == Scene::select) {
 		select->Draw3D();
-	}
+	}*/
 
 	// 3Dオブジェクト描画後処理
 	Model::PostDraw();
@@ -104,15 +104,15 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに前景スプライトの描画処理を追加できる
 	/// </summary>
-	 if (scene == Scene::title) {
+	 /*if (scene == Scene::title) {
 		title->Draw2DNear();
-	}
-	if (scene == Scene::game) {
-		game->Draw2DNear();
-	}
-	if (scene == Scene::select) {
+	}*/
+	//if (scene == Scene::game) {
+	//	game->Draw2DNear();
+	//}
+	/*if (scene == Scene::select) {
 		select->Draw2DNear();
-	}
+	}*/
 
 	// スプライト描画後処理
 	Sprite::PostDraw();

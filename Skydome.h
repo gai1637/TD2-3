@@ -7,10 +7,11 @@
 #include "Sprite.h"
 #include "ViewProjection.h"
 #include "WorldTransform.h"
+#include<memory>
 class Skydome {
 private:
 	WorldTransform worldTransform_;
-	Model* model_ = nullptr;
+	std::unique_ptr<Model> model_ = nullptr;
 
 
 public:
@@ -28,7 +29,7 @@ public:
 	/// <summary>
 	/// 3D描画
 	/// </summary>
-	void Draw3D();
+	void Draw3D(ViewProjection &viewProjection);
 
 
 

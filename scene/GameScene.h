@@ -8,6 +8,7 @@
 #include "Sprite.h"
 #include "ViewProjection.h"
 #include "WorldTransform.h"
+#include"memory"
 
 /// <summary>
 /// ゲームシーン
@@ -77,10 +78,10 @@ private: // メンバ変数
 	Audio* audio_ = nullptr;
 
 	static void (GameScene::*pFuncTable[])();
-	Scene scene = Scene::title;
+	Scene scene = Scene::game;
 	std::unique_ptr<Game> game;
-	std::unique_ptr<Title> title;
-	std::unique_ptr<Select> select;
+	//std::unique_ptr<Title> title;
+	//std::unique_ptr<Select> select;
 
 
 
